@@ -23,7 +23,9 @@ function myFilter(array, cb) {
     // Your code here
     let result =[];
     for(let i=0; i<array.length; i++){
-        result.push(cb(array[i]));
+        if(cb(array[i])){
+            result.push(array[i]);
+        }
     }
     return result;
 }
