@@ -8,8 +8,22 @@ in false, then the element should not be changed in the new array.
 Note that that you cannot use the Array `map` or `filter` methods to solve this
 problem.
 
-Examples:
 
+*******************************************************************************/
+
+function selectiveMap(array, selector, mapper) {
+    // Your code here 
+    let result =[];
+    for(let i = 0; i < array.length; i++){
+        if(!selector(array[i])){
+            result.push(array[i])
+        }
+        else{
+            result.push(mapper(array[i]))
+        }
+    }
+    return result;
+}
 function isEven(n) {
     return n % 2 === 0;
 }
@@ -34,12 +48,6 @@ console.log(selectiveMap([-10, 4, 7, 6, -2, -9], isEven, flipSign));
 
 console.log(selectiveMap([-10, 4, 7, 6, -2, -9], isPositive, square));
 // [-10, 16, 49, 36, -2, -9]
-*******************************************************************************/
-
-function selectiveMap(array, selector, mapper) {
-    // Your code here 
-}
-
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
     module.exports = selectiveMap;
