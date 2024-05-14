@@ -29,7 +29,14 @@ console.log(result4);   // false
 *******************************************************************************/
 
 function none(array, cb) {
-  // Your code here 
+  // Your code here
+  let res = true;
+  array.forEach((el) => {
+    if(cb(el)){
+      res = false;
+    }
+  });
+  return res;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
