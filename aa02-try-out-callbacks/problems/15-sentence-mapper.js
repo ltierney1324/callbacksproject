@@ -26,8 +26,36 @@ console.log(result2); // 'ths s prtty cl rght'
 *******************************************************************************/
 
 let sentenceMapper = function (sentence, cb) {
-  // Your code here 
+  // Your code here
+  // let newStr = '';
+  let senArray = sentence.split(' ');
+  let newArray= [];
+  // console.log(senArray);
+  for(let i=0; i<senArray.length; i++){
+    let el = senArray[i];
+    // console.log(el)
+    let word = cb(el);
+
+    newArray.push(word);
+  }
+
+   return newArray.join(' ');
+
 };
+
+
+let removeVowels = function(word) {
+  let newWord = "";
+  for (let i = 0; i < word.length; i++) {
+      let char = word[i];
+      if (!"aeiou".includes(char)) {
+          newWord += char;
+      }
+  }
+  return newWord;
+};
+let result2 = sentenceMapper("this is pretty cool right", removeVowels);
+console.log(result2); // 'ths s prtty cl rght'
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
