@@ -31,7 +31,13 @@ console.log(result3); // 8
 *******************************************************************************/
 
 function mySimpleReduce(array, cb) {
-  // Your code here 
+  // Your code here
+  let res = array[0];
+  for (let i = 1; i < array.length; i++) {
+    let ele = array[i];
+    res = cb(res, ele);
+  }
+  return res;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
