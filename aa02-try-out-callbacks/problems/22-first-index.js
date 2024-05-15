@@ -24,6 +24,15 @@ console.log(result3); // -1
 
 function firstIndex(array, cb) {
   // Your code here 
+  // let result = -1;
+  for(let i = 0; i < array.length; i++){
+    let el = array[i];
+    if(cb(el)){
+      return i;
+    }
+    
+  }
+  return -1
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

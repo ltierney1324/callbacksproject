@@ -17,7 +17,7 @@ for(let i = 0; i < array.length; i++){
   array[i]=cb(array[i],i)
 }
   
-  //return array
+  return array
 }
 let arr1 = [4, 2, 6, 5];
 mapMutator(arr1, function (el) {
